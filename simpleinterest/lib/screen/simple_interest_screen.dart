@@ -13,6 +13,7 @@ class _SimpleInterestScreenState extends State<SimpleInterestScreen> {
   int? rate;
   int? time;
   double? result;
+  String? group;
 
 //relationship
 //loosely coupled
@@ -96,6 +97,55 @@ class _SimpleInterestScreenState extends State<SimpleInterestScreen> {
                 const SizedBox(
                   height: 8,
                 ),
+                ListTile(
+                  title: const Text('Add'),
+                  leading: Radio(
+                    value: 'add',
+                    groupValue: group,
+                    onChanged: (String? value){
+                      setState(() {
+                        group=value;
+                      });
+                    },
+                  ),
+                ),
+                ListTile(
+                  title: const Text('Subtract'),
+                  leading: Radio(
+                    value: 'subtract',
+                    groupValue: group,
+                    onChanged: (String? value){
+                      setState(() {
+                        group=value;
+                      });
+                    },
+                  ),
+                ),
+                ListTile(
+                  title: const Text('Divide'),
+                  leading: Radio(
+                    value: 'divide',
+                    groupValue: group,
+                    onChanged: (String? value){
+                      setState(() {
+                        group=value;
+                      });
+                    },
+                  ),
+                ),
+                ListTile(
+                  title: const Text('Multiply'),
+                  leading: Radio(
+                    value: 'multiply',
+                    groupValue: group,
+                    onChanged: (String? value){
+                      setState(() {
+                        group=value;
+                      });
+                    },
+                  ),
+                ),
+              
                 ElevatedButton(
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
